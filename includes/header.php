@@ -25,7 +25,17 @@
 					<h1 class="slogan" >No.1 Travel Agency in NZ</h1>
 					<div id="logo"><a href="index.php">FTTL</a></div>
 					<nav>
-						<?php echo View::render_navigation(); ?>
+
+						<?php 
+						$iMemberID = 0;
+						if(isset($_SESSION["CustomerID"])){
+							$iMemberID = $_SESSION["CustomerID"];
+							
+						}
+
+						echo View::render_navigation($iMemberID); 
+
+						?>
 					
 					</nav>
 				</header>

@@ -3,8 +3,11 @@
 
 	require_once("includes/header.php");
 	require_once("includes/form.php");
+	session_start();
 
-	echo "Welcome {username} start your journey" ;
+	$oCustomer = new Customer();
+
+	echo "Welcome".$oCustomer->FirstName ."start your journey" ;
 	echo "Go to home" ;
 
 	require_once("includes/footer.php");
