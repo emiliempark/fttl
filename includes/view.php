@@ -32,7 +32,7 @@
 
 				$sHTML.='<li>';
 					$sHTML.='<a href="product.php?pid='.$oProduct->ProductID.'">';
-						$sHTML.='<img src="assets/img/charters.jpg" alt="">';
+						$sHTML.='<img src="assets/img/products/'.$oProduct->PhotoPath.'" alt="'.$oProduct->ProductName.'">';
 						$sHTML.='<div class="screen">';
 							$sHTML.='<p class="productName">'.$oProduct->ProductName.'</p>';
 							$sHTML.='<p class="productPrice">$ '.$oProduct->HourlyPrice.'</p>';
@@ -47,7 +47,10 @@
 		}
 
 		static public function render_product(){
+			$sHTML='';
+			$sHTML.='';
 			
+			return $sHTML;
 		}
 	}
 ?>

@@ -2,7 +2,6 @@
 	require_once("includes/view.php");
 	require_once("includes/header.php");
 
-	session_start();
 ?>
 					<section id="product-content">
 						<div id="gallery"></div>

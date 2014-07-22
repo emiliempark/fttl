@@ -2,7 +2,7 @@
 	require_once("includes/view.php");
 	require_once("includes/header.php");
 	require_once("includes/model_collection.php");
-	session_start();
+
 
 	$aProductList = Collection::grabAllProducts();
 

@@ -28,5 +28,7 @@
 				</footer>
 			</div><!-- wrapper -->
 	</div><!-- outer frame -->
+	<script type="text/javascript" src="assets/js/gallery-slide.js"></script>
+
 </body>
 </html>
