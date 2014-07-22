@@ -1,8 +1,31 @@
 <?php
 	require_once("connection.php");
+	require_once("model_product.php");
 	require_once("model_customer.php");
 
 	class Collection{
+
+		static public function grabAllProducts(){
+
+			$aProducts = array();
+
+			$oConnection = new Connection();
+
+			$sSQL = "SELECT ProductID FROM tbproduct";
+
+			$oResult= $oConnection->query($sSQL);
+
+			while($aRow = $oConnection->fetch_array($oResult)){
+				$oProduct = new Product();
+				$oProduct->load($aRow["ProductID"]);
+				$aProducts[]=$oProduct;
+			}
+
+			$oConnection->close_connection();
+
+			return $aProducts;
+		}
+
 
 		static public function findCustomerByUsername($USERNAME_INPUT){
 			$oConnection = new Connection();
@@ -30,4 +53,14 @@
 		}
 			
 	}
+
+	// ----------------test-----
+
+	// $oCollection = new Collection();
+
+	// $aProducts= $oCollection->grabAllProducts();
+
+	// echo "<pre>";
+	// print_r($aProducts);
+	// echo "</pre>";
 ?>

@@ -5,10 +5,20 @@
 	require_once("includes/form.php");
 	session_start();
 
-	$oCustomer = new Customer();
 
-	echo "Welcome".$oCustomer->FirstName ."start your journey" ;
-	echo "Go to home" ;
+	if(isset($_SESSION["CustomerID"])){
+		$oCustomer = new Customer();
+		$oCustomer->load($_SESSION["CustomerID"]);
+
+		echo "Welcome".$oCustomer->FirstName ."start your journey" ;
+		echo "Go to home" ;
+
+	}else{
+
+		echo "Go to home" ;
+		
+	}
+	
 
 	require_once("includes/footer.php");
 ?>	
