@@ -1,83 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="language" content="EN">
-	<meta name="description" content="Tourists and travel experts best choice of traveling Queens town in NZ">
-	<meta name="keywords" content="travel, fttl, queenstown, aerosports">
-	<meta name="robots" content="index, follow">
-	<meta name="copyright" content="M12 Design Park">
-	<meta name="author" content="Emilie Park">
-	<meta name="creationdate" content="20 July 2014">
-	<meta name="distribution" content="local">
-	<meta name="rating" content="general">
-	<title>Fly To The Limit</title>
-	<link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-</head>
-<body>
-	<div id="outer-frame">
-		<div id="inner-frame"></div>
-			<div id="wrapper">
-				<header>
-					<h1 class="slogan" >No.1 Travel Agency in NZ</h1>
-					<div id="logo"><a href="">FTTL</a></div>
-					<nav>
-						<ul id="public-menu">
-							<li><a href="">Home</a></li>
-							<li><a href="">About FTTL</a></li>
-							<li><a href="">Contact</a></li>
-							<li><a href="">Visitor information</a></li>
-							<li><a href="">Booking request</a></li>
-						</ul>
-						<ul id="member-menu">
-							<li><a href="">Profile settings</a></li>
-							<li><a href="">Booking list & Itinerary</a></li>
-						</ul>
-					</nav>
-				</header>
-				<section id="content-panel">
-					<div id="top-info">
-						<div id="status"><a href="">Sign-in</a> or <a href="">become a member</a></div>
-						<div id ="search">+64 3 123 3456
-							<form action="http://www.fttl.co.nz"  method="GET" role="search">
-								<input name="search" type="search" placeholder="- search" required />
-								<button type="submit" role="button">search</button>
-							</form>
-						</div>
-					</div>
+<?php
+	require_once("includes/view.php");
+	require_once("includes/header.php");
+	require_once("includes/form.php");
+?>
 					<!-- main-content -->
 					<section id="contact-content">
-						<h1>Contact us</h1>
+						<h2>Contact us</h2>
+						<div id="googleMap">google map</div>
+						<?php
+
+							$oForm = new Form();
+							$oForm->renderTextInput("First Name","firstName");
+							$oForm->renderTextInput("Last Name","lastName");
+							$oForm->renderTextInput("Email","email");
+							$oForm->renderTextInput("Contactnumber","contactNumber");
+							$oForm->renderTextarea("Message","message");
+							$oForm->renderSubmitInput("Send","submit");
+
+							echo $oForm->HTMLcode;
+
+						?>
 					</section>
-				</section>
-				<footer>
-					<ul id="social-media">
-						<li><a href="">facebook</a></li>
-						<li><a href="">instagram</a></li>
-						<li><a href="">twitter</a></li>
-						<li><a href="">youtube</a></li>
-					</ul>
-					<p id="credit">© 2014 FTTL, All rights reserved. Powered by M12 Design Park</p>
-					
-					<ul id="bottom-contact">
-						<li><a href="">Inquery</a></li>
-						<li>
-							<a href="">Opt in newsletter</a>
-						</li>
-						<!-- newsletter popup here -->
-						<div id="newsletter-join">
-							<form action="" method="">
-								<legend>
-									<input type="text" name="name" id="name" placeholder="Name" required/>
-									<input type="text"	name="emain" id="email" placeholder="Email" required />
-								</legend>
-								<input type="submit" value="Opt in" />
-							</form>
-						</div>
-					</ul>
-				</footer>
-			</div><!-- wrapper -->
-	</div><!-- outer frame -->
-</body>
-</html>
+<?php					
+	require_once("includes/footer.php");
+?>				

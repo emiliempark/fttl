@@ -13,7 +13,7 @@ var oGoRight = document.getElementById("goRight");
 oGoLeft.onclick = function(){
 	var iCurrentShow = 0;
 
-	for(var iCount = 0; iCount<aImages.length; iCount--){
+	for(var iCount = 0; iCount<aImages.length; iCount++){
 		
 		if(aImages[iCount].className == "show"){
 			iCurrentShow = iCount;
@@ -23,8 +23,8 @@ oGoLeft.onclick = function(){
 
 	iCurrentShow --;
 
-	if(iCurrentShow <= 0 ){
-		iCurrentShow = aImages.length;
+	if(iCurrentShow < 0 ){
+		iCurrentShow = aImages.length - 1;
 	}
 
 	aImages[iCurrentShow].className = "show";

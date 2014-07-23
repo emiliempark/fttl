@@ -643,17 +643,24 @@ section>h2 {
 	font-weight: lighter;
 	margin-bottom: 15px;
 }
-#product-content article button{
+#product-content #buttons{
+	float: right;
+}
+#product-content article a{
+	display: block;
 	width: 160px;
 	height:30px;
+	margin-left: 10px;
+	text-align: center;
 	line-height: 30px;
 	font-size: 14px;
-	float: right;
+	float: left;
+	color: #fff;
 	background-color: #DD4C3C;
 	border: none;
 }
 
-#product-content article button:hover{
+#product-content article a:hover{
 	background-color: #7DB1EF;
 }
 

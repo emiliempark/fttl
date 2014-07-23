@@ -29,6 +29,37 @@
 			$this->sHTML .= '<span class="errorMessage">'.$sError.'</span>';
 		}
 
+		public function renderTextarea($sLABEL,$sCONTROL_NAME){
+
+			$sData ="";
+
+			if(isset($this->aData[$sCONTROL_NAME])){
+				$sData = $this->aData[$sCONTROL_NAME];
+			}
+
+			$sError="";
+
+			if(isset($this->aError[$sCONTROL_NAME])){
+				$sError = $this->aError[$sCONTROL_NAME];
+			}
+
+			$this->sHTML .= '<textarea name="'.$sCONTROL_NAME.'" id="'.$sCONTROL_NAME.'" placeholder="'.$sLABEL.'"/>'.$sData.'</textarea>';
+			$this->sHTML .= '<span class="errorMessage">'.$sError.'</span>';
+		}
+
+		public function renderPasswordInput($sLABEL, $sCONTROL_NAME){
+
+			$sError="";
+
+			if(isset($this->aError[$sCONTROL_NAME])){
+				$sError = $this->aError[$sCONTROL_NAME];
+			}
+
+			$this->sHTML .= '<label for="'.$sCONTROL_NAME.'">'.$sLABEL.'</label>';
+			$this->sHTML .= '<input type="password" name="'.$sCONTROL_NAME.'" id="'.$sCONTROL_NAME.'" placeholder="required"/>';
+			$this->sHTML .= '<span class="errorMessage">'.$sError.'</span>';
+		}
+
 		public function renderSubmitInput($sLABEL, $sCONTROL_NAME){
 			$this->sHTML .= '<input type="'.$sCONTROL_NAME.'" name="'.$sCONTROL_NAME.'" value="'.$sLABEL.'">';
 		}
