@@ -4,9 +4,17 @@
 
 ?>
 					<section id="product-content">
-						<div id="gallery"></div>
+						<div id="gallery">
+							<button id="goLeft"> go left</button>
+							<button id="goRight"> go right</button>
+							<div id="imgViewer">
+								<img src="assets/img/products/photographic_gallery_01.jpg" alt="photographic" class="show">
+								<img src="assets/img/products/photographic_gallery_02.jpg" alt="photographic">
+								<img src="assets/img/products/photographic_gallery_03.jpg" alt="photographic">
+							</div>
+						</div>
 						<article>
-							<h1>Product name</h1>
+							<h1>Photographic Scenic</h1>
 							<button> Book Now</button>
 							<div class="split"></div>
 							<div class="product-chapter-left">

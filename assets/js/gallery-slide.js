@@ -1,9 +1,53 @@
-var aImages = new array();
 
-aImages[0] = "url('assets/img/products/phogographic_gallery_01')";
-aImages[1] = "url('assets/img/products/phogographic_gallery_02')";
-aImages[2] = "url('assets/img/products/phogographic_gallery_03')";
+// var oGallery = document.getElementById("gallery");
 
-var oGallery = document.getElementById("gallery");
+// oGallery.style.border = "1px black solid";
 
-oGallery.style.backgroundColor = "black";
+var oGallery = document.getElementById("imgViewer");
+
+var aImages = oGallery.children;
+
+var oGoLeft = document.getElementById("goLeft");
+var oGoRight = document.getElementById("goRight");
+
+oGoLeft.onclick = function(){
+	var iCurrentShow = 0;
+
+	for(var iCount = 0; iCount<aImages.length; iCount--){
+		
+		if(aImages[iCount].className == "show"){
+			iCurrentShow = iCount;
+			aImages[iCount].className = "";
+		}
+	}
+
+	iCurrentShow --;
+
+	if(iCurrentShow <= 0 ){
+		iCurrentShow = aImages.length;
+	}
+
+	aImages[iCurrentShow].className = "show";
+
+};
+
+oGoRight.onclick = function(){
+	var iCurrentShow = 0;
+
+	for(var iCount=0; iCount<aImages.length ;iCount++){
+		if(aImages[iCount].className == "show"){
+			iCurrentShow = iCount;
+			aImages[iCount].className = "";
+		}
+
+	}
+
+	iCurrentShow ++;
+	if(iCurrentShow >= aImages.length ){
+		iCurrentShow = 0;
+	}
+
+	aImages[iCurrentShow].className = "show";
+
+};
+
