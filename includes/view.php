@@ -15,7 +15,7 @@
 			if($iMemberID != 0){
 				$sHTML .= '<ul id="member-menu">';
 					$sHTML .= '<li><a href="profile.php">Profile settings</a></li>';
-					$sHTML .= '<li><a href="">Booking list & Itinerary</a></li>';
+					$sHTML .= '<li><a href="itinerary.php">Itinerary</a></li>';
 				$sHTML .= '</ul>';
 			}
 

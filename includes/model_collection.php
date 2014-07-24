@@ -32,7 +32,7 @@
 
 			$sSQL= 'SELECT CustomerID
 					FROM tbCustomer
-					WHERE Username = "'.$USERNAME_INPUT.'"';
+					WHERE Username = "'.$oConnection->escape_value($USERNAME_INPUT).'"';
 
 			$oResult = $oConnection->query($sSQL);
 

@@ -187,6 +187,12 @@
 	// $oCustomer->save();
 
 	// print_r($oCustomer);
+
+	// -----------------------test
+	//update
+
+	
+
 ?>
 
 

@@ -75,25 +75,23 @@
 				$this->aError[$sCONTROL_NAME] = "Must be filled";
 			}
 		}
+		public function checkMatch($sCONTROL_NAME_1, $sCONTROL_NAME_2) { //checks if the password and confirm password match or not
+	
+			$sPasswordInput1 = "";
 
-		public function checkMatch($sCONTROL_NAME_1, $sCONTROL_NAME_2){
-
-			$sPasswordInput1 = ""; 
-
-
-			if(isset($aData[$sCONTROL_NAME_1])){
-				$sPasswordInput1 = $aData[$sCONTROL_NAME_1];
+			if(isset($this->aData[$sCONTROL_NAME_1])) {
+				$sPasswordInput1 = $this->aData[$sCONTROL_NAME_1];
 			}
 
-			$sPasswordInput1 = ""; 
-			
-			if(isset($aData[$sCONTROL_NAME_2])){
-				$sPasswordInput2 = $aData[$sCONTROL_NAME_2];
+			$sPasswordInput2 = "";
+			if(isset($this->aData[$sCONTROL_NAME_2])) {
+				$sPasswordInput2 = $this->aData[$sCONTROL_NAME_2];
 			}
 
-			if( $sPasswordInput1 != $sPasswordInput2 ){
-				$this->aError[$sCONTROL_NAME_2] = "Must match";
-			}
+			if($sPasswordInput1 !== $sPasswordInput2) {
+				$this->aError[$sCONTROL_NAME_2] = "Must match"; //if doesn't match, then place this error message into the aError array so that a new customer cannot be saved
+			} 
+
 		}
 
 		public function renderErrorMessage($sCONTROL_NAME, $sMESSAGE){

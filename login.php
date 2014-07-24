@@ -11,8 +11,11 @@
 					<!--main-content -->
 					<section id="login-content">
 						<h2>Login</h2>
-						<p>If you haven't registered, <a href="login.php">go to become a member</a>. </p>
+						
 							<?php
+								echo "If you haven't registered,.<br/>";
+								echo '<a href="register.php" class="sign-in-link">Go to become a member</a>';
+
 								if(isset($_SESSION["CustomerID"])){
 
 									$oCustomer = new Customer();

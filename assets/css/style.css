@@ -1,4 +1,12 @@
 /*-----------------------------------------------
+	colour scheme
+	red: #DD4C3C; rgba(221,76,60)
+	light blue: #7DB1EF; rgba(125,177,239)
+	dark blue : #3F4851;  rgba(63,72,81)
+------------------------------------------------*/
+
+
+/*-----------------------------------------------
 	reset
 ------------------------------------------------*/
 *{
@@ -427,7 +435,7 @@ footer #bottom-contact li:hover a{
 /*----------------about-------------------*/
 #about-content{
 	width: 100%;
-	outline: red 1px solid;
+
 }
 /*----------------contact-------------------*/
 #contact-content{
@@ -757,4 +765,83 @@ input[type="datetime-local"]:last-child{
 
 }
 
+/*----------------#profile-settings-------------------*/
 
+#profile-settings{
+
+}
+
+#profile-settings div{
+	width: auto;
+	margin-right: 50px;
+	float: left;
+	color: #fff;
+	background-color: rgb(63,72,81);
+	/*border: #3F4851 1px solid;*/
+	padding: 20px;
+}
+
+#profile-settings form{
+	width: auto;
+	margin: 0 auto;
+}
+#profile-settings .label,
+#profile-settings label{
+	display: block;
+	width: 150px;
+	height: 25px;
+	font-size: 14px;
+	line-height: 25px;
+	text-transform: uppercase;
+	float: left;
+	clear: left;
+	margin: 0 0 10px 0;
+
+}
+
+#profile-settings input{
+	color: #3F4851;
+}
+
+#profile-settings .inputText,
+#profile-settings input{
+	width: 160px;
+	height: 25px;
+	font-size: 14px;
+	line-height: 25px;
+	padding: 0 10px;
+	float: left;
+
+}
+
+#profile-settings .inputText{
+	border: #fff 1px solid;
+}
+
+#profile-settings input[type="submit"]{
+	width: 332px;
+	height: 30px;
+	color: #fff;
+	background-color:#DD4C3C; 
+	margin-top: 15px;
+}
+
+#profile-settings input[type="submit"]:hover{
+	background-color:#7DB1EF; 
+}
+
+
+ .sign-in-link{
+	display: block;
+	width: 200px;
+	height: 50px;
+	margin-top: 30px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	background-color: #DD4C3C;
+}
+
+.sign-in-link:hover{
+	background-color: #7DB1EF;
+}

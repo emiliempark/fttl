@@ -5,7 +5,7 @@
 ?>
 					<!-- main-content -->
 					<section id="about-content">
-						<h1>About FTTL</h1>
+						<h2>About FTTL</h2>
 					</section>
 
 

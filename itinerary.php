@@ -1,13 +1,12 @@
-<?php 
+<?php
 	require_once("includes/view.php");
-
 	require_once("includes/header.php");
 	require_once("includes/form.php");
+?>
 
-
-	echo "Welcome, start your adventure!<br/>";
-	echo '<a href="login.php" class="sign-in-link"> Go to sign-in</a>';
-	
-
+<section id="profile-settings">
+		<h2>Itinerary</h2>
+</section>
+<?php					
 	require_once("includes/footer.php");
 ?>	

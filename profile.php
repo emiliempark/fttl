@@ -2,88 +2,104 @@
 	require_once("includes/view.php");
 	require_once("includes/header.php");
 	require_once("includes/form.php");
+	require_once("includes/model_customer.php");
+
+	$iCustomerID=0;
+
+	if(isset($_SESSION["CustomerID"])){
+		$iCustomerID = $_SESSION["CustomerID"];
+	}
+
+	$oCustomer = new Customer();
+
+	$oCustomer->load($iCustomerID);
+
+	$aExistingDetails = array();
+
 ?>
 
 	<section id="profile-settings">
 		<h2>Profile Settings</h2>
-		<ul>
-			<li>Customer id : ########</li>
-			<li>First Name: ########</li>
-			<li>Last Name: ########</li>
-			<li>Email: ########</li>
-			<li>Address: ########</li>
-			<li>Contact: ########</li>
-			<li>: ########</li>
-			<li>Contact: ########</li>
+		<div id="changePassword">
+			<p class="label">User name</p>
+			<p class="inputText"><?php echo $oCustomer->Username; ?></p>
+			<?php
+				$oForm = new Form();
 
+				if(isset($_POST["submit"])){
 
-		</ul>
-		<?php
-			$oForm = new Form();
+					 $oForm->Data = $_POST;
+					 $oForm->checkFilled("new-password");
+					 $oForm->checkFilled("new-password-confirm");
+					 $oForm->checkMatch("new-password", "new-password-confirm");
 
-			$iCustomerID = $_SESSION["CustomerID"];
+					 if($oForm->isValid){
 
-			$oCustomer = new Customer();
-			$oCustomer->load($iCustomerID);
+					 	$oCustomer->Password = $_POST["new-password"];
 
-			$aExistingDetails = array();
-			$aExistingDetails["first_Name"] = $oCustomer->firstname;
-			$aExistingDetails["last_Name"] = $oCustomer->lastname;
-			$aExistingDetails["address"] = $oCustomer->address;
-			$aExistingDetails["telephone"] = $oCustomer->telephone;
-			$aExistingDetails["email"] = $oCustomer->email;
+					 	$oCustomer->save();
 
-			$oForm->Data = $aExistingDetails;
-
-			if(isset($_POST["submit"])){
-
-				$oForm->Data = $_POST;
-
-				$oForm->checkFilled("firstname");
-				$oForm->checkFilled("lastname");
-				$oForm->checkFilled("email");
-				$oForm->checkFilled("address");
-				$oForm->checkFilled("phone");
-				$oForm->checkFilled("register-username");
-				$oForm->checkFilled("register-password");
-				$oForm->checkFilled("register-password-confirm");
-				$oForm->checkMatch("register-password","register-password-confirm");
-
-				if($oForm->isValid){
-
-					$oCustomer = new Customer();
-
-					$oCustomer->FirstName = $_POST["firstname"];
-					$oCustomer->LastName = $_POST["lastname"];
-					$oCustomer->Email = $_POST["email"];
-					$oCustomer->Address = $_POST["address"];
-					$oCustomer->Phone = $_POST["phone"];
-					$oCustomer->Username = $_POST["register-username"];
-					$oCustomer->Password = $_POST["register-password"];
-
-					$oCustomer->save();
-					
-					header("location:profile.php");
-					exit;
+					 	header("Location: profile.php");
+					 	exit;
+					 }
 				}
 
+				$oForm->renderPasswordInput("New Password","new-password");
+				$oForm->renderPasswordInput("Confirm","new-password-confirm");
+				$oForm->renderSubmitInput("Change Password", "submit");
 
-			}
+				echo $oForm->HTMLcode;
 
-			$oForm->renderTextInput("Firstname", "firstname");
-			$oForm->renderTextInput("Lastname", "lastname");
-			$oForm->renderTextInput("Email", "email");
-			$oForm->renderTextInput("Address", "address");
-			$oForm->renderTextInput("Phone", "phone");
-			$oForm->renderTextInput("Username", "register-username");
-			$oForm->renderTextInput("Password", "register-password");
-			$oForm->renderTextInput("Confirm", "register-password-confirm");
-			$oForm->renderSubmitInput("Sign-in", "submit");
+			?>
+		</div>
 
-			echo $oForm->HTMLcode;
-		?>								
+		<div id="changeContact">
+			<p class="label">First name</p>
+			<p class="inputText"> <?php echo $oCustomer->FirstName; ?></p>
+			<p class="label">Last name</p>
+			<p class="inputText"> <?php echo $oCustomer->LastName; ?></p>
+			<?php
+				$oForm = new Form();
+
+				$aExistingDetails = array();
+				$aExistingDetails["email"] = $oCustomer->Email;
+				$aExistingDetails["address"] = $oCustomer->Address;
+				$aExistingDetails["phone"] = $oCustomer->Phone;
+
+				$oForm->Data = $aExistingDetails;
+
+				if(isset($_POST["submit"])){
+					$oForm->Data = $_POST;
+
+					$oForm->checkFilled("email");
+					$oForm->checkFilled("address");
+					$oForm->checkFilled("phone");
+
+					if($oForm->isValid){
+
+						$oCustomer->Email = $_POST["email"];
+						$oCustomer->Address = $_POST["address"];
+						$oCustomer->Phone = $_POST["phone"];
+
+						$oCustomer->save();
+
+						header("Location: profile.php");
+						exit;
+					}
+
+				}
+
+				$oForm->renderTextInput("Email", "email");
+				$oForm->renderTextInput("Address", "address");
+				$oForm->renderTextInput("Phone", "phone");
+				$oForm->renderSubmitInput("Change Contact", "submit");
+				echo $oForm->HTMLcode;
+			?>
+		</div>	
+	 					
 	</section>
 
 <?php					
 	require_once("includes/footer.php");
+
 ?>				
