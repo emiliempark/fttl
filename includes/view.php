@@ -94,5 +94,9 @@
 			
 			return $sHTML;
 		}
+
+		static public function render_profile($oCUSTOMER){
+			
+		}
 	}
 ?>

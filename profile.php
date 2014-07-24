@@ -6,6 +6,18 @@
 
 	<section id="profile-settings">
 		<h2>Profile Settings</h2>
+		<ul>
+			<li>Customer id : ########</li>
+			<li>First Name: ########</li>
+			<li>Last Name: ########</li>
+			<li>Email: ########</li>
+			<li>Address: ########</li>
+			<li>Contact: ########</li>
+			<li>: ########</li>
+			<li>Contact: ########</li>
+
+
+		</ul>
 		<?php
 			$oForm = new Form();
 

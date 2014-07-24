@@ -220,9 +220,6 @@ nav #member-menu:before{
 	background-color: #3F4851;
 }
 #category li:nth-of-type(2) a{
-	width: 80px;
-}
-#category li:nth-of-type(3) a{
 	width: 150px;
 }
 
