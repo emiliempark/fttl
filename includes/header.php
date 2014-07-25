@@ -47,7 +47,7 @@
 									$oCustomer = new Customer();
 									$oCustomer->load($_SESSION["CustomerID"]);
 
-									echo '<p>Welcome, '.$oCustomer->FirstName.'</p>';
+									echo '<p>Welcome, '.htmlentities($oCustomer->FirstName).'</p>';
 									echo '<a href="logout.php">Sign-out</a>';
 
 								}else{

@@ -688,7 +688,7 @@ section>h2 {
 	height: 240px;
 	padding: 15px;
 	background-color: #3F4851;
-	color: #3F4851;
+	color: #fff;
 }
 #booking label, #booking input, #booking select, #booking legend, #booking fieldset{
 	display: block;

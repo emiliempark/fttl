@@ -13,18 +13,19 @@
 						<h2>Login</h2>
 						
 							<?php
-								echo "If you haven't registered,.<br/>";
-								echo '<a href="register.php" class="sign-in-link">Go to become a member</a>';
+								
 
 								if(isset($_SESSION["CustomerID"])){
 
 									$oCustomer = new Customer();
 									$oCustomer->load($_SESSION["CustomerID"]);
 
-									echo "<p>Hi,".$oCustomer->FirstName.", you are aleady logged in. You must log out before you can log in another account </p>";
+									echo "<p> Hi,".$oCustomer->FirstName.", you are aleady logged in. You must log out before you can log in another account </p>";
 
 								}else{
-
+									echo "If you haven't registered,.<br/>";
+									echo '<a href="register.php" class="sign-in-link">Go to become a member</a>';
+									
 									$oForm = new Form();
 
 									if(isset($_POST["submit"])){
@@ -61,12 +62,12 @@
 										}
 
 									}
+									$oForm->renderTextInput("Username", "login-username");
+									$oForm->renderTextInput("Password", "login-password");
+									$oForm->renderSubmitInput("Sign-in", "submit");
 								}
 
 
-								$oForm->renderTextInput("Username", "login-username");
-								$oForm->renderTextInput("Password", "login-password");
-								$oForm->renderSubmitInput("Sign-in", "submit");
 
 								echo $oForm->HTMLcode;
 							?>

@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	require_once("includes/view.php");
 	require_once("includes/header.php");
 	require_once("includes/form.php");

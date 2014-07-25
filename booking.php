@@ -7,15 +7,40 @@
 						<h2>Booking request</h2>
 						<div id="booking">
 							<?php
-								if(isset($_SESSOIN["CustomerID"])){
+								if(isset($_SESSION["CustomerID"])){
+									$oCustomer = new Customer();
+									$oCustomer->load($_SESSION["CustomerID"]);
 
+									echo $oCustomer->FirstName.", your booking request is here.";
+									echo '<ul>';
+									echo '<li>
+										<div>Product Name</div>
+										<div></div>
+										<div></div>
+										<div></div>
+										<div>Cancel</div>
+									</li>
+									<li></li>
+								</ul>';
 								}else{
 									echo "You must login to book your activities.<br/>";
 									echo '<a href="login.php" class="sign-in-link"> Go to sign-in</a>';
-								}
+								}	
 							?>
-
-							<form action="" method="">
+							
+							
+								<ul>
+									<li>
+										<div>Product Name</div>
+										<div></div>
+										<div></div>
+										<div></div>
+										<div>Cancel</div>
+									</li>
+									<li></li>
+								</ul>
+						
+							<!-- <form action="" method="">
 								<fieldset id="location">
 									<label for="locationInput">Location</label>
 									<input type="text" name="location" id="locationInput"/>
@@ -62,7 +87,7 @@
 								</fieldset>
 								<input type="textarea">
 								<input type="submit" value="Booking request"/>
-							</form>
+							</form> -->
 						</div>
 					</section>
 <?php
