@@ -61,6 +61,8 @@
 								echo $oForm->HTMLcode;
 							?>								
 					</section>
+
+					<script type="text/javascript" src="assets/js/validate.js"></script>
 <?php 
 	require_once("includes/footer.php");
 ?>					
