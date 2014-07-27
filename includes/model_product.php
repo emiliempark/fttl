@@ -131,7 +131,7 @@
 					return $this->iActive;
 					break;
 				default:
-					die("product __get has failed ");
+					die($VAR."product __get has failed ");
 			}
 		}
 

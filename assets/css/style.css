@@ -682,89 +682,113 @@ section>h2 {
 }
 
 /*----------------booking request-------------------*/
-#booking{
-	width: 82%;
+#booking-ticket{
+	width: 80%;
 	min-width: 800px;
-	height: 240px;
-	padding: 15px;
+	padding: 2%;
+	height: auto;
 	background-color: #3F4851;
 	color: #fff;
 }
-#booking label, #booking input, #booking select, #booking legend, #booking fieldset{
+#booking-ticket:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#booking-ticket #ticket-title{
+	width: 100%;
+	border-bottom: #fff 1px solid;
+	float: left;
+	margin-bottom: 30px;
+}
+#booking-ticket #ticket-detail{
+	width: 33%;
+	float: left;
+	margin-right: 15px;
+}
+
+#booking-ticket #ticket-message{
+	width: 33%;
+	float: left;
+	margin-right: 15px;
+}
+
+#booking-ticket #ticket-checkout{
+	width: 25%;
+	float: right;
+}
+
+
+#booking-ticket select{
+	width:400px;
+	height: 50px;
+	font-size: 18px;
+	background: transparent;
+	margin-bottom: 10px;
+}
+
+#booking-ticket option{
+	color: #3F4851;
+}
+#booking-ticket form{
+	margin: 0;
+	width: 100%;
+}
+#booking-ticket label{
+	display: block;
+	width: 150px;
+	height: 25px;
+	font-size: 14px;
+	line-height: 25px;
+	text-transform: uppercase;
+	/*float: left;*/
+	clear: left;
+	margin: 0 0 20px 0;
+
+}
+#booking-ticket input{
 	display: block;
 	width: 200px;
 	height: 30px;
 	border: none;
 	float: left;
+	color: #3F4851;
 }
-#booking fieldset{
-	
+#booking-ticket textarea{
+	display: block;
+	max-width: 100%;
+	width: 100%;
+	min-height: 150px;
+	color: #3F4851;
+
 }
-#booking label,#booking legend{
+
+#booking-ticket input[type="submit"]{
+	width: 100%;
+	height: 50px;
 	color: #fff;
-}
-/*#location, #activity{
-	display: block;
-	float:left;
-}
-#activity{
-	margin: 0 0 0 25px;
-}
-*/
-
-
-#activity .square{
-	background-color: white;
-	display: inline-block;
+	background-color:#DD4C3C; 
+	margin-top: 15px;
+	/*float: right;*/
 }
 
-#activity select option{
-	border-radius: 0;
-	background-color: transparent;
-}
-/*#dateTime{
-	display:block;
-	clear:both;
 
-}*/
-input[type="datetime-local"]{
-	display: block;
-	float: left;
-	width: 200px;
-	height: 30px;
-	border: none;
-}
-input[type="datetime-local"]:last-child{
-	margin: 0 0 0 25px;
-}
-/*#booking legend{
-	color: #fff;
-	padding: 15px 0 0 0;
-}
-*/
-/*#people label, #people input{
-	display: block;
-	float: left;
-	width: 30px;
-	height: 30px;
-	margin: 0 3px 0 0;
-	font-size: 0;
-	border: none;
-	/*outline: red 1px solid;*/
+#booking-ticket input[type="submit"]:hover{
+	background-color:#7DB1EF; 
 }
 
-#booking input[type="submit"]{
-	display: block;
-	float: left;
-	width: 200px;
-	height: 30px;
-	margin: 45px 0 0 25px;
-	color:#fff;
-	/*background-color: #DD4C3C;*/
-	border: none;
 
+#total-price{
+	font-size: 30px;
+	font-weight: 700;
+	margin: 10px 0;
 }
 
+#currency{
+	font-size: 16px;
+	font-weight: 400;
+}
 /*----------------#profile-settings-------------------*/
 
 #profile-settings{
@@ -844,4 +868,40 @@ input[type="datetime-local"]:last-child{
 
 .sign-in-link:hover{
 	background-color: #7DB1EF;
+}
+
+/*----------------admin product manager-------------------*/
+
+#product_manager form{
+	width: auto;
+	margin-top: 15px;
+	outline: red 1px solid;
+}
+#product_manager form:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+#product_manager p{
+	margin-top: 30px;
+}
+#product_manager label{
+	font-size: 0;
+	width: 0;
+	height: 30px;
+	float: left;
+	clear: none;
+}
+
+#product_manager input{
+	float: left;
+	clear: none;
+	width: 100px;
+	height: 28px;
+}
+
+#product_manager input[type="submit"]{
+	float: left;
+	width: 150px;
+	height: 30px;
 }

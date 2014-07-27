@@ -47,6 +47,54 @@
 			$this->sHTML .= '<span class="errorMessage">'.$sError.'</span>';
 		}
 
+		public function renderDateInput($sLABEL,$sCONTROL_NAME){
+			$sData = '';
+
+			if(isset($this->aData[$sCONTROL_NAME])){
+				$sData = $this->aData[$sCONTROL_NAME];
+			}
+
+			$sError="";
+
+			if(isset($this->aError[$sCONTROL_NAME])){
+				$sError = $this->aError[$sCONTROL_NAME];
+			}
+
+			$this->sHTML.= '<label for="'.$sCONTROL_NAME.'">'.$sLABEL.'</label>';
+			$this->sHTML.= '<input type="date" name="'.$sCONTROL_NAME.'" id="'.$sCONTROL_NAME.'" value="'.$sData.'"/>';
+		}
+
+		public function renderTimeInput($sLABEL,$sCONTROL_NAME){
+			$sData = '';
+
+			if(isset($this->aData[$sCONTROL_NAME])){
+				$sData = $this->aData[$sCONTROL_NAME];
+			}
+
+			$sError="";
+
+			if(isset($this->aError[$sCONTROL_NAME])){
+				$sError = $this->aError[$sCONTROL_NAME];
+			}
+			
+			$this->sHTML.= '<label for="'.$sCONTROL_NAME.'">'.$sLABEL.'</label>';
+			$this->sHTML.= '<input type="time" name="'.$sCONTROL_NAME.'" id="'.$sCONTROL_NAME.'" value="'.$sData.'"/>';
+		}
+
+		public function renderSelectInput($sCONTROL_NAME,$aPRODUCTS){
+
+			$sHTML ='';
+			$sHTML .='<select name="'.$sCONTROL_NAME.'" id="'.$sCONTROL_NAME.'">';
+
+			
+			for($iCount = 0; $iCount<count($aPRODUCTS); $iCount++){
+				$oProduct = $aPRODUCTS[$iCount];
+				$sHTML .='<option value="'.$oProduct->ProductName.'">'.$oProduct->ProductName.'</option>';			
+			}
+
+			$sHTML .= '</select>';
+		}
+
 		public function renderPasswordInput($sLABEL, $sCONTROL_NAME){
 
 			$sError="";
