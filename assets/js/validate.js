@@ -144,10 +144,14 @@ function checkAll(){
 
 // --------------------------------------------------------
 
-var sInput = document.getElementById("firstname");
+var aElements = document.getElementsByClassName("required");
 
-sInput.onblur = function(){
-	checkFilled(sInput);
+for(var iCount=0;iCount<aElements.length;iCount++){
+
+
+	aElements[iCount].onblur = function(){
+		checkFilled(this.id);
+	}
 }
 
 

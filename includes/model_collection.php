@@ -51,6 +51,15 @@
 				die($USERNAME_INPUT." doesn\'t exist.");
 			}
 		}
+
+		static public function encodePassword($sPASSWORD){
+
+			$sSalt = hash(sha1, $sPASSWORD.'fttl');
+
+			$sHashTheHash = hash(md5, $sSalt.$sPASSWORD.$sSalt);
+
+			return $sHashTheHash;
+		}
 			
 	}
 

@@ -10,7 +10,7 @@
 			$this->aError = array();
 		}
 
-		public function renderTextInput($sLABEL, $sCONTROL_NAME){
+		public function renderTextInput($sLABEL, $sCONTROL_NAME,$sClassName=""){
 
 			$sData ="";
 
@@ -25,8 +25,8 @@
 			}
 
 			$this->sHTML .= '<label for="'.$sCONTROL_NAME.'">'.$sLABEL.'</label>';
-			$this->sHTML .= '<input type="text" name="'.$sCONTROL_NAME.'" id="'.$sCONTROL_NAME.'" placeholder="required" value ="'.$sData.'"/>';
-			$this->sHTML .= '<span class="errorMessage">'.$sError.'</span>';
+			$this->sHTML .= '<input type="text" class="'.$sClassName.'" name="'.$sCONTROL_NAME.'" id="'.$sCONTROL_NAME.'" placeholder="required" value ="'.$sData.'"/>';
+			$this->sHTML .= '<span id="'.$sCONTROL_NAME.'Message">'.$sError.'</span>';
 		}
 
 		public function renderTextarea($sLABEL,$sCONTROL_NAME){
@@ -110,6 +110,10 @@
 
 		public function renderSubmitInput($sLABEL, $sCONTROL_NAME){
 			$this->sHTML .= '<input type="'.$sCONTROL_NAME.'" name="'.$sCONTROL_NAME.'" value="'.$sLABEL.'">';
+		}
+
+		public function renderHiddenInput($sCONTROL_NAME,$sValue){
+			$this->sHTML .= '<input type="hidden" name="'.$sCONTROL_NAME.'" value="'.$sValue.'">';
 		}
 
 		public function checkFilled($sCONTROL_NAME){

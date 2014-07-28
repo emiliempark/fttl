@@ -96,7 +96,7 @@
 							Active =  '".$this->iActive."' 
 						WHERE  tbproduct.ProductID =".$this->iProductID;
 
-				$bResult= $oConnection->query();
+				$bResult= $oConnection->query($sSQL);
 
 				if($bResult == false){
 					die("Update failed");

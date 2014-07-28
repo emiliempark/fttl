@@ -45,7 +45,7 @@
 												
 												$oForm->renderErrorMessage("login-username","Username does not exist.");
 											
-											}elseif($_POST["login-password"] !== $oCustomer->Password){
+											}elseif(Collection::encodePassword($_POST["login-password"]) !== $oCustomer->Password){
 												
 												$oForm->renderErrorMessage("login-password","Password is not correct.");
 											

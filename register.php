@@ -4,6 +4,7 @@
 
 	require_once("includes/header.php");
 	require_once("includes/form.php");
+	require_once("includes/model_collection.php");
 	
 ?>
 					<!--main-content -->
@@ -37,7 +38,9 @@
 										$oCustomer->Address = $_POST["address"];
 										$oCustomer->Phone = $_POST["phone"];
 										$oCustomer->Username = $_POST["register-username"];
-										$oCustomer->Password = $_POST["register-password"];
+										$oCustomer->Password = Collection::encodePassword($_POST["register-password"]);
+
+
 
 										$oCustomer->save();
 										
@@ -48,8 +51,8 @@
 
 								}
 
-								$oForm->renderTextInput("Firstname", "firstname");
-								$oForm->renderTextInput("Lastname", "lastname");
+								$oForm->renderTextInput("Firstname", "firstname","required");
+								$oForm->renderTextInput("Lastname", "lastname","required");
 								$oForm->renderTextInput("Email", "email");
 								$oForm->renderTextInput("Address", "address");
 								$oForm->renderTextInput("Phone", "phone");
