@@ -57,8 +57,8 @@
 								$oForm->renderTextInput("Address", "address");
 								$oForm->renderTextInput("Phone", "phone");
 								$oForm->renderTextInput("Username", "register-username");
-								$oForm->renderTextInput("Password", "register-password");
-								$oForm->renderTextInput("Confirm", "register-password-confirm");
+								$oForm->renderPasswordInput("Password", "register-password");
+								$oForm->renderPasswordInput("Confirm", "register-password-confirm");
 								$oForm->renderSubmitInput("Sign-in", "submit");
 
 								echo $oForm->HTMLcode;

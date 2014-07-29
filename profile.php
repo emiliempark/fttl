@@ -4,6 +4,7 @@
 	require_once("includes/header.php");
 	require_once("includes/form.php");
 	require_once("includes/model_customer.php");
+	require_once("includes/model_collection.php");
 
 	$iCustomerID=0;
 
@@ -36,7 +37,7 @@
 
 					 if($oForm->isValid){
 
-					 	$oCustomer->Password = $_POST["new-password"];
+					 	$oCustomer->Password = Collection::encodePassword($_POST["new-password"]);
 
 					 	$oCustomer->save();
 
