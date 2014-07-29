@@ -39,7 +39,7 @@
 
 			$sError="";
 
-			if(isset($this->aError[$sCONTROL_NAME])){
+			if(isset($this->aError[$sCONTROL_NAME])){ 
 				$sError = $this->aError[$sCONTROL_NAME];
 			}
 

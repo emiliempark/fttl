@@ -60,12 +60,12 @@
 			$sHTML.='</div>';
 			$sHTML.='</div>';
 			$sHTML.='<article>';
+			$sHTML.='<div id="product-title">';
 			$sHTML.='<h1>'.$oPRODUCT->ProductName.'</h1>';
 			$sHTML.='<div id="buttons">';
 			$sHTML.='<a href="catalogue.php"> Go to Catalogue </a>';
 			$sHTML.='<a href=""> Book Now</a>';
 			$sHTML.='</div>';
-			$sHTML.='<div class="split"></div>';
 			$sHTML.='<div class="product-chapter-left">';
 			$sHTML.='<h2>Description</h2>';
 			$sHTML.='<p>'.$oPRODUCT->Description.'</p>';

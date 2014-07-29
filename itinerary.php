@@ -12,7 +12,7 @@
 				$oCustomer = new Customer();
 				$oCustomer->load($_SESSION["CustomerID"]);
 
-				echo $oCustomer->FirstName.", your booking request is here.";
+				echo htmlentities($oCustomer->FirstName).", your booking request is here.";
 				echo '<ul>';
 				echo '<li>
 					<div>Product Name</div>

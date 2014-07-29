@@ -24,7 +24,7 @@
 		<h2>Profile Settings</h2>
 		<div id="changePassword">
 			<p class="label">User name</p>
-			<p class="inputText"><?php echo $oCustomer->Username; ?></p>
+			<p class="inputText"><?php echo htmlentities($oCustomer->Username); ?></p>
 			<?php
 				$oForm = new Form();
 
@@ -57,9 +57,9 @@
 
 		<div id="changeContact">
 			<p class="label">First name</p>
-			<p class="inputText"> <?php echo $oCustomer->FirstName; ?></p>
+			<p class="inputText"> <?php echo htmlentities($oCustomer->FirstName); ?></p>
 			<p class="label">Last name</p>
-			<p class="inputText"> <?php echo $oCustomer->LastName; ?></p>
+			<p class="inputText"> <?php echo htmlentities($oCustomer->LastName); ?></p>
 			<?php
 				$oForm = new Form();
 

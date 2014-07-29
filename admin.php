@@ -29,7 +29,7 @@ require_once("includes/form.php");
 
 				$oForm->renderErrorMessage("admin-username","incorrect admin name.");
 
-			}elseif($_POST["admin-password"] !== $oCustomer->Password){
+			}elseif(Collection::encodePassword($_POST["admin-password"]) !== $oCustomer->Password){
 
 				$oForm->renderErrorMessage("admin-password","Password is not correct.");
 

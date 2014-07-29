@@ -2,6 +2,11 @@
 	session_start();
 
 	require_once("includes/model_customer.php");
+
+
+	if(!isset($sTitle)){
+		$sTitle = "Fly To The Limit";
+	}
 ?>
 
 <!doctype html>
@@ -13,7 +18,7 @@
 	<meta name="robots" content="index, follow">
 	<meta name="author" content="Emilie Park">
 	<meta name="rating" content="general">
-	<title>Fly To The Limit</title>
+	<title><?php echo $sTitle; ?></title>
 	<link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>

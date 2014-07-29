@@ -6,6 +6,7 @@
 	require_once("includes/form.php");
 	require_once("includes/model_collection.php");
 
+	$sTitle = "Fly To The Limit - Login";
 	require_once("includes/header.php");
 ?>
 					<!--main-content -->
@@ -20,7 +21,7 @@
 									$oCustomer = new Customer();
 									$oCustomer->load($_SESSION["CustomerID"]);
 
-									echo "<p> Hi,".$oCustomer->FirstName.", you are aleady logged in. You must log out before you can log in another account </p>";
+									echo '<p> Hi,'.htmlentities($oCustomer->FirstName).', you are aleady logged in. You must log out before you can log in another account </p>';
 
 								}else{
 									echo "If you haven't registered,.<br/>";
