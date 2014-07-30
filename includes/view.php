@@ -22,11 +22,18 @@
 			return $sHTML;
 		}
 
-		static public function render_catalogue($aPRODUCT_LISTS){
+		static public function render_catalogue($aPRODUCT_LISTS,$iCURRENT_PAGE,$iITEMS_PER_PAGE){
 
 			$sHTML='<ul>';
 
-			for($iCount = 0; $iCount<count($aPRODUCT_LISTS); $iCount++){
+			$iStartIndex = ($iCURRENT_PAGE -1) * $iITEMS_PER_PAGE;
+			$iEndIndex = $iStartIndex + $iITEMS_PER_PAGE -1;
+
+			if($iEndIndex > count($aPRODUCT_LISTS) -1 ){
+				$iEndIndex = count($aPRODUCT_LISTS) -1;
+			}
+
+			for($iCount = $iStartIndex; $iCount<=$iEndIndex; $iCount++){
 				
 				$oProduct = $aPRODUCT_LISTS[$iCount];
 
@@ -98,5 +105,25 @@
 		static public function render_profile($oCUSTOMER){
 			
 		}
+
+		static public function renderPaginator($sURL,$iTOTAL_COUNT,$iITEMS_PER_PAGE,$iCURRENT_PAGE){
+		
+		$iNumberOfPages = ceil($iTOTAL_COUNT/$iITEMS_PER_PAGE);
+		
+        $sHTML='<ul id="pagination">';
+       
+        for($iCount=1; $iCount<=$iNumberOfPages; $iCount++){
+			if($iCount==$iCURRENT_PAGE){
+				$sHTML .='<li><a class="current" href="'.$sURL.'&page='.$iCount.'">'.$iCount.'</a></li>';
+			}else{
+				$sHTML .='<li><a href="'.$sURL.'&page='.$iCount.'">'.$iCount.'</a></li>';
+			}
+	        
+		}
+        $sHTML .='</ul>';
+
+		return $sHTML;
+
+	}
 	}
 ?>

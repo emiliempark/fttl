@@ -12,14 +12,24 @@
 						<h2>Activities</h2>
 
 						<?php
-							echo View::render_catalogue($aProductList);
-
-
 							$iProductID = 1;
 
 							if(isset($_GET["pid"])){
 								$iProductID = $_GET["pid"];
 							}
+							
+							$sURL ='catalogue.php?pid='.$iProductID;
+							$iTotalItems = count($aProductList);
+							$iItemsPerPage = 8;
+							
+							$iCurrntPage= 1;
+							if(isset($_GET["page"])){
+								$iCurrntPage = $_GET["page"];
+							}
+
+							echo View::render_catalogue($aProductList,$iCurrntPage,$iItemsPerPage);
+
+							echo View::renderPaginator($sURL,$iTotalItems,$iItemsPerPage,$iCurrntPage);
 
 						?>
 						

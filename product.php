@@ -16,6 +16,8 @@
 	
 	echo View::render_product($oProduct);
 
+
+
 ?>
 
 	<script type="text/javascript" src="assets/js/gallery-slide.js"></script>

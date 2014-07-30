@@ -548,9 +548,8 @@ section>h2 {
 	margin: 0 0 20px 0;
 }
 #catalogue ul{
-	width: 82%;
+	width: 100%;
 	float: left;
-
 }
 #catalogue ul li {
 	width: 250px;
@@ -598,6 +597,23 @@ section>h2 {
 #catalogue .productPrice{
 	font-size:  16px;
 	margin: 0 0 10px 15px;
+}
+
+#pagination{
+	margin-top: 30px;
+	width: auto !important;
+	height: auto;
+	background-color: #3F4851;
+}
+
+#pagination li{
+	width: 30px !important;
+}
+#pagination a{
+	height: 30px !important;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
 }
 /*----------------product-------------------*/
 #product-content #gallery{
